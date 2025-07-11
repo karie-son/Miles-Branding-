@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blumiles Branding Co Ltd</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: purple;
+      color: white;
+    }
+    header {
+      background-color: yellow;
+      color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .menu-button {
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: yellow;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      z-index: 1;
+    }
+    nav a {
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+    }
+    section {
+      padding: 20px;
+    }
+    .accordion {
+      margin: 10px 0;
+      background: #fff;
+      color: black;
+      border: none;
+      outline: none;
+      width: 100%;
+      padding: 15px;
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .panel {
+      padding: 0 15px;
+      display: none;
+      overflow: hidden;
+      background-color: white;
+      color: black;
+    }
+    footer {
+      background-color: red;
+      text-align: center;
+      padding: 15px;
+    }
+    .contact-form {
+      padding: 20px;
+      background: #fff;
+      color: black;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">BBL - Blumiles Branding Co Ltd</div>
+    <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
+    <nav id="navMenu">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#tenders">Tenders</a>
+      <a href="#opportunity">Opportunity</a>
+      <a href="#downloads">Downloads</a>
+    </nav>
+  </header>  <section id="about">
+    <h2>About</h2>
+    <p>Blumiles Branding Co Ltd is a creative branding technology company focused on helping businesses build powerful brand identities through innovative solutions.</p>
+  </section>  <section id="services">
+    <h2>Services</h2>
+    <p>We offer cutting-edge branding technology services including logo design, digital brand strategies, packaging, and promotional solutions tailored to client needs.</p>
+  </section>  <section id="tenders">
+    <h2>Tenders</h2>
+    <p>Explore exciting tender opportunities with us! We partner with businesses and organizations on creative projects that transform brand presence.</p>
+  </section>  <section id="opportunity">
+    <h2>Opportunity</h2>
+    <p>Currently, there are no available vacancies. Stay tuned for future opportunities.</p>
+  </section>  <section id="downloads">
+    <h2>Downloads</h2>
+    <button class="accordion" onclick="togglePanel(this)">+ Company Profile</button>
+    <div class="panel">
+      <p>Download our company profile here.</p>
+    </div>
+    <button class="accordion" onclick="togglePanel(this)">+ Branding Guide</button>
+    <div class="panel">
+      <p>Download our branding guide here.</p>
+    </div>
+  </section>  <section class="contact-form">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>  <footer>
+    <p>© 2025 Blumiles Branding Co Ltd. All rights reserved.</p>
+  </footer>  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function togglePanel(button) {
+      const panel = button.nextElementSibling;
+      const isOpen = panel.style.display === 'block';
+      panel.style.display = isOpen ? 'none' : 'block';
+      button.textContent = isOpen ? '+ ' + button.textContent.slice(2) : '- ' + button.textContent.slice(2);
+    }
+  </script></body>
+</html>
